@@ -1,0 +1,73 @@
+---
+author: Benjamin Cichos
+format:
+  pdf:
+    toc: false
+---
+
+# Exercise 6
+## 2D Double Well
+### Potential visualisation
+The potential is visualised in the figure below
+
+![](vpot_img.png){width=80%}
+
+### Trajectory Data
+We plot the trajectory data of the particle in the potential from the position data of the MD simulation.
+
+![](x_time.png){width=80%}
+
+![](y_time.png){width=80%}
+
+The x-positions seems to go between the two stables states in the potential, while the y-coordinate behaves randomly as a function of time, with a mean at around 0.
+
+![](x_y.png){width=80%}
+
+The scatter plot of the x and y coordinates shows that the particle is moving between the two stable states in the potential. These stable states have differnt x-positions at -1.5 and 1.5. The y-coordinate of the particle seems to be randomly distributed and hase a Gaussian envelope.
+
+### PCA
+
+The first figure shows the x-y plot from the MD simulation data overlayed with the first two principal components of the data.
+
+![](x_y_pca.png){width=80%}
+
+We can see that the first principal component is almost aligned with the y-axis. This is because the spread of the data in the y-axis is the largest. The second principal component is almost aligned with the x-axis.
+
+
+From the time evolution of the first principal component we cannot identify the transition between the state A and B. The time evolution appears to be random similar to the y-position of the particle. The spread of the data along the y-axis was larger than the x-axis that is why the first principal component is almost aligned with the y-axis. It would follow that the second principal component is almost aligned with the x-axis. We can clearly observe this when plotting the time evolution of the second principal component, where we can clearly identify the transition between the two stable states.
+
+![](components_time.png){width=80%}
+
+
+## Z-Potential
+
+### Potential visualisation
+
+The potential is visualised below
+
+![](zpot_img.png){width=80%}
+
+### Trajectory Data
+We completed the MD simulation for the z potential as required in the assignement sheet.
+
+![](zpot_x_time.png){width=80%}
+
+We observe in the time evolution of the x-position that there seems to be two stable states, however, the data contains a lot of noise. Thus, the transitions between the two states is not perfectly visible from the raw position data.
+
+![](zpot_y_time.png)
+
+The time evolution of the y-position clearly shows that the particle is moving between the two stable states in the potential.
+
+![](zpot_x_y.png){width=80%}
+
+When plotting the x-y data as a scatter plot, we observe the two stable states in the potential. We can see two clusters of data points centered at around y = 5.0 and x = 7.5 and at y = -5.0 and x = -7.5. This is consistent with the visualtion of the potential. We can see that the two clusters seems to have a Gaussian-like envelope.
+
+### PCA
+
+The figure below visualises the x-y data from the md simulation superimposed with the first two principal components of the data.
+
+![](zpot_x_y_pca.png){width=80%}
+
+![](zpot_components_time.png){width=80%}
+
+When we consider the time evolution of the first principal component of the data we can clearly observe the transition between the two states. The two stable states are clearly visible as the 1st component position seems to switch between around a +10 and -10 position. Similarly, we are also able to observe the transiton between the states in the second component position as a function of time. This illustrates that PCA can help with finding the components that "matter" in your data, as it offers and improvement in the visibility of the transitions between the stable states, compared with the raw positional data.
